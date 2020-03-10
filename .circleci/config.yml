@@ -28,7 +28,6 @@ jobs:
             echo "Nope"; exit 1
           fi
 workflows:
- version: 2.1
  one_and_two:
    jobs:
      - one
