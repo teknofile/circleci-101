@@ -9,7 +9,6 @@ jobs:
       - run: mkdir -p my_workspace
       - run: echo "trying out workspaces" > my_workspace/echo-output
       - persist_to_workspace:
-        # Must be an absolute path or a relative path from the working dir
         root: my_workspace
         paths:
           - echo-output
