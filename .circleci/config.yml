@@ -28,10 +28,10 @@ jobs:
             echo "Nope"; exit 1
           fi
 workflows:
-version: 2
- one_and_two:
-   jobs:
-     - one
-     - two:
-         requires:
-           - one
+  version: 2
+  one_and_two:
+    jobs:
+      - one
+      - two:
+          requires:
+            - one
