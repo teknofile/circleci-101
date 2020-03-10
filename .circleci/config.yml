@@ -1,3 +1,4 @@
+---
 version: 2
 jobs:
   one:
@@ -9,9 +10,9 @@ jobs:
       - run: mkdir -p my_workspace
       - run: echo "trying out workspaces" > my_workspace/echo-output
       - persist_to_workspace:
-        root: my_workspace
-        paths:
-          - echo-output
+          root: my_workspace
+          paths:
+            - echo-output
   two:
     docker:
       - image: circleci/ruby:2.4.1
@@ -19,8 +20,7 @@ jobs:
       - checkout
       - run: echo "A first hi"
       - attach_workspace:
-        at: my_workspace
-
+          at: my_workspace
       - run: |
           if [[ $(cat my_workspace/echo-output) == "trying out workspaces" ]]; then
             echo "It worked"
